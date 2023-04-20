@@ -10,12 +10,12 @@ use yii\helpers\Url;
 /** @var \common\models\Product $model */
 ?>
     <div class="card h-100">
-        <a href="<?php echo \yii\helpers\Url::to(['/site/product', 'id' =>$model->id]) ?>" class="img-wrapper">
+        <a href="<?php echo \yii\helpers\Url::to(['/site/product', 'slug' =>$model->slug]) ?>" class="img-wrapper">
             <img class="card-img-top" src="<?php echo $model->getImageUrl() ?>" alt="<?php echo $model->name?>">
         </a>
         <div class="card-body">
             <h5 class="card-title">
-                <a href="<?php echo \yii\helpers\Url::to(['/site/product', 'id' =>$model->id]) ?>" class="text-dark"><?php echo \yii\helpers\StringHelper::truncateWords($model->name, 20) ?></a>
+                <a href="<?php echo \yii\helpers\Url::to(['/site/product', 'slug' =>$model->slug]) ?>" class="text-dark"><?php echo \yii\helpers\StringHelper::truncateWords($model->name, 20) ?></a>
             </h5>
             <h5><?php echo Yii::$app->formatter->asCurrency($model->price) ?></h5>
             <div class="card-text">

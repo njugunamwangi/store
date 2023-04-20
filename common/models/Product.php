@@ -13,6 +13,7 @@ use yii\helpers\FileHelper;
  *
  * @property int         $id
  * @property string      $name
+ * @property string      $slug
  * @property string|null $description
  * @property string|null $image
  * @property float       $price
@@ -65,7 +66,7 @@ class Product extends \yii\db\ActiveRecord
             [['price'], 'number'],
             [['imageFile'], 'image', 'extensions' => 'png, jpg, jpeg, webp', 'maxSize' => 10 * 1024 * 1024],
             [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'slug'], 'string', 'max' => 255],
             [['image'], 'string', 'max' => 2000],
             [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
             [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],

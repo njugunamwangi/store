@@ -42,6 +42,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'site/product/<action:(product)>' => 'site/product/<action>',
+                'site/product/<slug>' => 'site/product'
             ],
         ],
         'assetManager' => [
