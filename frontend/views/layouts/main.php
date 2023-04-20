@@ -90,7 +90,7 @@ AppAsset::register($this);
             </div>
 
             <div class="col text-right">
-                <p class="pull-right">Created by <a href="https://in2dronestechsolutions.com" target="_blank">in2 Drones Tech</a></p>
+                <p class="pull-right">Created by <a href="https://github.com/njugunamwangi" target="_blank">Njuguna Mwangi</a></p>
             </div>
         </div>
     </div>
