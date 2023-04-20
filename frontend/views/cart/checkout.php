@@ -12,7 +12,7 @@
 /** @var float $totalPrice */
 
 use yii\bootstrap4\ActiveForm;
-
+$this->title = 'Checkout | in2 Drones Store'
 ?>
 
 <?php $form = ActiveForm::begin([
