@@ -8,7 +8,7 @@
 /** @var \yii\web\View $this */
 /** @var \common\models\UserAddress $userAddress */
 
-
+$this->title = 'Profile | in2 Drones Store'
 ?>
 
 <div class="row">
