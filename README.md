@@ -13,7 +13,7 @@ Yii2 E-commerce system
  - Bootstrap 4
  - Custom [Admin template](https://startbootstrap.com/theme/sb-admin-2) in backend
  - Custom [Product Item](https://startbootstrap.com/template/shop-item) & [Products Listing](https://startbootstrap.com/template/shop-homepage) in the frontend
- - Live SMTP via [Mailtrap](mailtrap.io)
+ - Live SMTP via [Mailtrap](https://mailtrap.io)
  - Product Management
  - Implement cart page
  - Checkout for guests
