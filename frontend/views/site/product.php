@@ -16,7 +16,7 @@ $this->title = $model->name;
             <span><?php echo Yii::$app->formatter->asCurrency($model->price) ?></span>
             <!-- <span>$40.00</span> -->
         </div>
-        <p class="lead"><?php echo Html::encode(strip_tags($model->description)) ?></p>
+        <p class="lead"><?php echo strip_tags($model->description); ?></p>
         <div class="d-flex">
             <a href="<?php echo \yii\helpers\Url::to(['/cart/add']) ?>" class="btn btn-primary btn-add-to-cart">
                 Add to Cart
