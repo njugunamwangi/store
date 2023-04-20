@@ -12,6 +12,8 @@ Yii2 E-commerce system
 ## Features
  - Bootstrap 4
  - Custom [Admin template](https://startbootstrap.com/theme/sb-admin-2) in backend
+ - Custom [Product Item](https://startbootstrap.com/template/shop-item) & [Products Listing](https://startbootstrap.com/template/shop-homepage) in the frontend
+ - Live SMTP via [Mailtrap](mailtrap.io)
  - Product Management
  - Implement cart page
  - Checkout for guests
@@ -27,10 +29,6 @@ Yii2 E-commerce system
     - Total users
     - Earnings by day
     - Revenue by country
-
-## Demo
-
-I am working on demo. It will be available soon.
 
 ## Installation
 1. Clone the repository
