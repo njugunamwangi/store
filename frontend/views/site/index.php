@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /** @var \yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'My Yii Application';
+$this->title = 'Store | in2 Drones';
 ?>
 <div class="site-index">
 
