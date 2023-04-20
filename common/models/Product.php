@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\BlameableBehavior;
+use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\FileHelper;
 
@@ -45,7 +46,11 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             TimestampBehavior::class,
-            BlameableBehavior::class
+            BlameableBehavior::class,
+            [
+                'class' => SluggableBehavior::class,
+                'attribute' => 'name'
+            ]
         ];
     }
 
@@ -75,6 +80,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'slug' => 'Slug',
             'description' => 'Description',
             'image' => 'Product Image',
             'imageFile' => 'Product Image',
