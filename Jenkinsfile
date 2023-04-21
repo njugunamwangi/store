@@ -36,5 +36,28 @@ pipeline {
       }
     }
 
+    stage('Config db file') {
+      steps {
+        sh '''echo 
+`<?php
+return [
+    \'components\' => [
+        \'db\' => [
+            \'class\' => \'yii\\db\\Connection\',
+            \'dsn\' => \'mysql:host=localhost;dbname=store\',
+            \'username\' => \'root\',
+            \'password\' => \'\',
+            \'charset\' => \'utf8\',
+        ],
+        \'mailer\' => [
+            \'class\' => \'yii\\swiftmailer\\Mailer\',
+            \'viewPath\' => \'@common/mail\',
+        ],
+    ],
+];` > common/config/main-local.php
+'''
+      }
+    }
+
   }
 }
