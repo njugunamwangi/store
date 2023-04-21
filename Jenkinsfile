@@ -39,10 +39,7 @@ pipeline {
     stage('Config db file') {
       steps {
         sh '''echo 
-"<?php
-return [
-    \'components\' => [
-        \'db\' => [
+"<?php\\nreturn [\'components\' => [\'db\' => [
             \'class\' => \'yii\\db\\Connection\',
             \'dsn\' => \'mysql:host=localhost;dbname=store\',
             \'username\' => \'root\',
@@ -54,7 +51,7 @@ return [
             \'viewPath\' => \'@common/mail\',
         ],
     ],
-];" > common/config/main-local.php
+];" > /common/config/main-local.php
 '''
       }
     }
