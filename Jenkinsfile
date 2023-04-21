@@ -39,7 +39,7 @@ pipeline {
     stage('Config db file') {
       steps {
         sh '''echo 
-`<?php
+"<?php
 return [
     \'components\' => [
         \'db\' => [
@@ -54,7 +54,7 @@ return [
             \'viewPath\' => \'@common/mail\',
         ],
     ],
-];` > common/config/main-local.php
+];" > common/config/main-local.php
 '''
       }
     }
