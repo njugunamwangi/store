@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Install dependancies') {
+      steps {
+        sh 'composer install'
+      }
+    }
+
   }
 }
