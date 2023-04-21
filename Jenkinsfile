@@ -37,8 +37,19 @@ pipeline {
     }
 
     stage('Config db file') {
-      steps {
-        sh 'ls -la'
+      parallel {
+        stage('Config db file') {
+          steps {
+            sh 'ls -la'
+          }
+        }
+
+        stage('Navigate') {
+          steps {
+            sh 'sudo cd common'
+          }
+        }
+
       }
     }
 
