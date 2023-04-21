@@ -2,6 +2,7 @@
 /** @var \common\models\Product $model */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 $this->title = $model->name;
 ?>
@@ -18,9 +19,9 @@ $this->title = $model->name;
         </div>
         <p class="lead"><?php echo strip_tags($model->description); ?></p>
         <div class="d-flex">
-            <a href="<?php echo \yii\helpers\Url::to(['/cart/add']) ?>" class="btn btn-primary btn-add-to-cart">
+            <!-- <a href="<?php echo Url::to(['/cart/add']) ?>" class="btn btn-primary btn-add-to-cart">
                 Add to Cart
-            </a>
+            </a> -->
         </div>
     </div>
 </div>
