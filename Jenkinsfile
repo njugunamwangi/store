@@ -46,7 +46,7 @@ pipeline {
 
         stage('Navigate') {
           steps {
-            sh 'sudo cd common'
+            sh 'cd common'
           }
         }
 
