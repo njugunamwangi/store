@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Initialize env.') {
+      steps {
+        sh 'php init && 1 | ./script'
+      }
+    }
+
   }
 }
