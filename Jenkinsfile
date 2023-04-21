@@ -27,6 +27,12 @@ pipeline {
           }
         }
 
+        stage('Confirm selection') {
+          steps {
+            sh 'echo \'yes\''
+          }
+        }
+
       }
     }
 
