@@ -9,7 +9,7 @@ pipeline {
 
     stage('Install dependancies') {
       steps {
-        sh 'composer install'
+        sh 'composer update'
       }
     }
 
