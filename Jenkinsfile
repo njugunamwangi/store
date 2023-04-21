@@ -38,7 +38,7 @@ pipeline {
 
     stage('Config db file') {
       steps {
-        sh 'cd /common/config'
+        sh 'ls -la'
       }
     }
 
