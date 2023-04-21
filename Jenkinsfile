@@ -14,8 +14,19 @@ pipeline {
     }
 
     stage('Initialize env.') {
-      steps {
-        sh 'php init && echo 1 && echo \'yes\''
+      parallel {
+        stage('Initialize env.') {
+          steps {
+            sh 'php init'
+          }
+        }
+
+        stage('Select Env.') {
+          steps {
+            sh 'echo 1'
+          }
+        }
+
       }
     }
 
