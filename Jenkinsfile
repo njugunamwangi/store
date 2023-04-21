@@ -46,7 +46,7 @@ pipeline {
 
         stage('Navigate') {
           steps {
-            sh 'cd common'
+            sh 'cd common/config'
           }
         }
 
