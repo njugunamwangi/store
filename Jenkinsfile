@@ -9,7 +9,7 @@ pipeline {
 
     stage('Install dependancies') {
       steps {
-        sh 'composer update'
+        sh 'composer install --ignore-platform-reqs'
       }
     }
 
