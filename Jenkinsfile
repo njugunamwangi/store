@@ -77,7 +77,7 @@ return [
 
     stage('Create database') {
       steps {
-        sh 'mysqladmin -u root -p create storr && echo "host@LOCAL23"'
+        sh 'mysql -u root -e "create database storr"'
       }
     }
 
