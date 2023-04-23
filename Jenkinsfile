@@ -77,7 +77,7 @@ return [
 
     stage('Create database') {
       steps {
-        sh 'mysqladmin -u --skip-grant-tables root create store '
+        sh 'mysqladmin -u root --skip-grant-tables root create store '
       }
     }
 
