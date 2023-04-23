@@ -81,5 +81,11 @@ return [
       }
     }
 
+    stage('Run migration') {
+      steps {
+        sh 'mysql use store && php yii migrate'
+      }
+    }
+
   }
 }
