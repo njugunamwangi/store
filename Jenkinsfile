@@ -79,7 +79,7 @@ return [
       parallel {
         stage('Create database') {
           steps {
-            sh 'mysql -u root -p create storr'
+            sh 'mysqladmin -u root -p create storr'
           }
         }
 
