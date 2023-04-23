@@ -77,7 +77,7 @@ return [
 
     stage('Create database') {
       steps {
-        sh 'mysqladmin create store'
+        sh 'mysqladmin -u root create store'
       }
     }
 
