@@ -75,9 +75,9 @@ return [
       }
     }
 
-    stage('Run migration') {
+    stage('Create database') {
       steps {
-        sh 'php yii migrate'
+        sh 'mysqladmin -u root -p create store && echo \'host@LOCAL23\''
       }
     }
 
