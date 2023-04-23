@@ -76,19 +76,8 @@ return [
     }
 
     stage('Create database') {
-      parallel {
-        stage('Create database') {
-          steps {
-            sh 'mysqladmin -u root -p create storr'
-          }
-        }
-
-        stage('Enter password') {
-          steps {
-            sh 'echo \'host@LOCAL23\''
-          }
-        }
-
+      steps {
+        sh 'mysqladmin -u root -p create storr && echo "host@LOCAL23"'
       }
     }
 
