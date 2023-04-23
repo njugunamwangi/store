@@ -76,8 +76,19 @@ return [
     }
 
     stage('Create database') {
-      steps {
-        sh 'mysqladmin -u root -p create store && echo \'host@LOCAL23\''
+      parallel {
+        stage('Create database') {
+          steps {
+            sh 'mysqladmin -u root -p create store && echo \'host@LOCAL23\''
+          }
+        }
+
+        stage('Enter password') {
+          steps {
+            sh 'echo \'host@LOCAL23\''
+          }
+        }
+
       }
     }
 
