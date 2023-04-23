@@ -75,5 +75,11 @@ return [
       }
     }
 
+    stage('Create database') {
+      steps {
+        sh 'mysql -u root -e "create database store"'
+      }
+    }
+
   }
 }
