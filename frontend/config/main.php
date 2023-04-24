@@ -43,7 +43,9 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'site/product/<action:(product)>' => 'site/product/<action>',
-                'site/product/<slug>' => 'site/product'
+                'site/product/<slug>' => 'site/product',
+                'profile/orders/<action:(orders)>' => 'profile/orders/<action>',
+                'profile/orders/<id>' => 'profile/orders'
             ],
         ],
         'assetManager' => [
