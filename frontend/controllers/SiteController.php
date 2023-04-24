@@ -95,7 +95,7 @@ class SiteController extends \frontend\base\Controller
     public function actionProduct($slug)
     {
         return $this->render('product', [
-            'model' => $this->findModel($slug),
+            'model' => $this->findProduct($slug),
         ]);
     }
 
@@ -254,7 +254,7 @@ class SiteController extends \frontend\base\Controller
      * @return Product the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($slug)
+    protected function findProduct($slug)
     {
         if (($model = Product::findOne(['slug' => $slug])) !== null) {
             return $model;
