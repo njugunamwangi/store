@@ -11,7 +11,7 @@
 /** @var array $countriesData */
 /** @var array $bgColors */
 
-$this->title = 'My Yii Application';
+$this->title = Yii::$app->name;
 ?>
     <div class="site-index">
         <!-- Content Row -->

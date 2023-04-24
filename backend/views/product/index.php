@@ -7,12 +7,14 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\search\ProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Products';
-$this->params['breadcrumbs'][] = $this->title;
+$title = 'Products';
+
+$this->title = $title .' | '. Yii::$app->name;
+$this->params['breadcrumbs'][] = $title;
 ?>
 <div class="product-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($title) ?></h1>
 
     <p>
         <?= Html::a('Create Product', ['create'], ['class' => 'btn btn-success']) ?>

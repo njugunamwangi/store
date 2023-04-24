@@ -7,12 +7,14 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\search\OrderSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Orders';
-$this->params['breadcrumbs'][] = $this->title;
+$title = 'Orders';
+
+$this->title = $title .' | '. Yii::$app->name;
+$this->params['breadcrumbs'][] = $title;
 ?>
 <div class="order-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($title) ?></h1>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
