@@ -60,6 +60,10 @@ AppAsset::register($this);
                     'url' => ['/profile/index'],
                 ],
                 [
+                    'label' => 'My Orders',
+                    'url' => ['/profile/orders'],
+                ],
+                [
                     'label' => 'Logout',
                     'url' => ['/site/logout'],
                     'linkOptions' => [
