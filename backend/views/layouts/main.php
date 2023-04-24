@@ -31,11 +31,11 @@ AppAsset::register($this);
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo Yii::$app->homeUrl ?>">
             <!--            <div class="sidebar-brand-icon rotate-n-15">-->
             <!--                <i class="fas fa-laugh-wink"></i>-->
             <!--            </div>-->
-            <div class="sidebar-brand-text mx-3">Yii2 E-commerce</div>
+            <div class="sidebar-brand-text mx-3"><?php echo Yii::$app->name?></div>
         </a>
 
         <!-- Divider -->
@@ -148,7 +148,7 @@ AppAsset::register($this);
                     </div>
 
                     <div class="col text-right">
-                        Created by <a href="https://youtube.com/TheCodeholic" target="_blank">TheCodeholic</a>
+                        Created by <a href="https://github.com/njugunamwangi" target="_blank">Njuguna Mwangi</a>
                     </div>
                 </div>
             </div>
