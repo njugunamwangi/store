@@ -16,6 +16,7 @@ use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use backend\models\search\OrderSearch;
+use yii\data\ActiveDataProvider;
 
 /**
  * Class ProfileController
@@ -86,9 +87,12 @@ class ProfileController extends \frontend\base\Controller
         ]);
     }
 
-    public function actionOrders($id) {
+    public function actionOrders() {
+        $id = Yii::$app->user->identity->id;
+
         $searchModel = new OrderSearch();
-        $dataProvider = $this->findOrders($id);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->query->andWhere(['created_by' => $id]);
 
         return $this->render('user_orders', [
             'searchModel' => $searchModel,
