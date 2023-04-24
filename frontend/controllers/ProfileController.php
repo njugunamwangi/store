@@ -1,6 +1,6 @@
 <?php
 /**
- * User: TheCodeholic
+ * User: njugunamwangi
  * Date: 12/12/2020
  * Time: 3:25 PM
  */
@@ -9,15 +9,18 @@ namespace frontend\controllers;
 
 
 use common\models\User;
+use common\models\Order;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
+use yii\web\NotFoundHttpException;
+use backend\models\search\OrderSearch;
 
 /**
  * Class ProfileController
  *
- * @author  Zura Sekhniashvili <zurasekhniashvili@gmail.com>
+ * @author  Njuguna Mwangi <njugunamwangi.n@gmail.com>
  * @package frontend\controllers
  */
 class ProfileController extends \frontend\base\Controller
@@ -82,4 +85,33 @@ class ProfileController extends \frontend\base\Controller
             'success' => $success
         ]);
     }
+
+    public function actionOrders() {
+        $searchModel = new OrderSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('user_orders', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+
+    /**
+     * Finds the Order model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     *
+     * @param integer $id
+     * @return Order the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findOrder($id)
+    {
+        if (( $model = Order::findOne(['created_by' => $id]) ) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
 }
