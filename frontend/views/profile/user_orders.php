@@ -2,10 +2,14 @@
 
 use yii\bootstrap4\Html;
 use yii\grid\GridView;
+use yii\grid\ActionColumn;
+use yii\helpers\Url;
+use app\models\Order;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\search\OrderSearch */
 /**  @var \yii\data\ActiveDataProvider $dataProvider  */
+/** @var \yii\models\Order $model */
 
 $this->title = 'My Orders';
 $this->params['breadcrumbs'][] = $this->title;
@@ -24,10 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'class' => \yii\bootstrap4\LinkPager::class
         ],
         'columns' => [
-            [
-                'attribute' => 'id',
-                'contentOptions' => ['style' => 'width: 80px;']
-            ],
+            ['class' => 'yii\grid\SerialColumn'],
             [
                 'attribute' => 'fullname',
                 'content' => function ($model) {
@@ -50,11 +51,15 @@ $this->params['breadcrumbs'][] = $this->title;
             //'created_by',
 
             [
-                'class' => 'common\grid\ActionColumn',
-                'template' => '{view} {update}',
-                'contentOptions' => [
-                    'class' => 'td-actions'
-                ]
+                'class' => ActionColumn::class,
+                'header' => 'Actions',
+                'template' => '{view}',
+                'urlCreator' => function ($action, $model, $key, $index, $column) {
+                    if ($action === 'view') {
+                        $url = '/profile/order/'.$model->id;
+                        return $url;
+                    }
+                 }
             ],
         ],
     ]); ?>
