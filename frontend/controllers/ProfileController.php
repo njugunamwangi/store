@@ -86,9 +86,9 @@ class ProfileController extends \frontend\base\Controller
         ]);
     }
 
-    public function actionOrders() {
+    public function actionOrders($id) {
         $searchModel = new OrderSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $this->findOrders($id);
 
         return $this->render('user_orders', [
             'searchModel' => $searchModel,
@@ -105,9 +105,9 @@ class ProfileController extends \frontend\base\Controller
      * @return Order the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findOrder($id)
+    protected function findOrders($id)
     {
-        if (( $model = Order::findOne(['created_by' => $id]) ) !== null) {
+        if (( $model = Order::findAll(['created_by' => $id]) ) !== null) {
             return $model;
         }
 
