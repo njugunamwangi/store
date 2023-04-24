@@ -44,8 +44,8 @@ return [
             'rules' => [
                 'site/product/<action:(product)>' => 'site/product/<action>',
                 'site/product/<slug>' => 'site/product',
-                'profile/orders/<action:(orders)>' => 'profile/orders/<action>',
-                'profile/orders/<id>' => 'profile/orders'
+                'profile/order/<action:(orders)>' => 'profile/order/<action>',
+                'profile/order/<id>' => 'profile/order'
             ],
         ],
         'assetManager' => [
